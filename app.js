@@ -4,5 +4,5 @@ process.env.PORT
 app.get('/', function (req, res) {
     res.send('hello world')
 })
-let port = process.env.port || 3000;
+let port = process.env.PORT || 3000;
 app.listen(port)
