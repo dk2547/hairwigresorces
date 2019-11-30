@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.logo {
+
+    padding: 0;
+    margin: 0;
+
+}
+
+h2 {
+    margin: 0;
+}
+
+#logo-img {
+    width: 15%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+#img-flex>div>img {
+    width: 100%;
+}
+
+#img-flex>div {
+    width: 30%;
+    margin: 0 2%;
+}
+
+#img-flex {
+    display: flex;
+}
+
+#map {}
+
+iframe {
+    width: 75%;
+}
+
+.welcome-heading {
+    color: #b40e0e;
+}
+
+.welcome-text {
+    margin: 0 10%;
+}
