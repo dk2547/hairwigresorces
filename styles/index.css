@@ -54,14 +54,21 @@ iframe {
 
 footer {
     margin-top: 10px;
-    background-color: black;
+    background-color: #1F1F1F;
 }
 
 .contact-info-heading {
+    color: #fff;
     font-size: 21px;
-    border-bottom: 1px solid #969696;
+    border-bottom: 1px solid #fff;
+    font-weight: 500;
+    font-family: 'Josefin Slab', serif;
 }
 
 .footer-elements {
     margin: 0 10%;
+}
+
+.footer-elements>span {
+    color: #bababa;
 }
