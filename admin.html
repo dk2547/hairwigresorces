@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="messages">
+
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        let firebaseConfig = {
+            apiKey: "AIzaSyAz6fVM_1P0RJDjKK29X54MP6ohAL0gDW4",
+            authDomain: "to-do-df264.firebaseapp.com",
+            databaseURL: "https://to-do-df264.firebaseio.com",
+            projectId: "to-do-df264",
+            storageBucket: "to-do-df264.appspot.com",
+            messagingSenderId: "870689656698",
+            appId: "1:870689656698:web:d502f43b50507537"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var ref = firebase.database().ref('hairwigindia/contactform/');
+        ref.on('value', function (snapshot) {
+            $('.messages').html(``)
+            data = snapshot.val();
+            console.log(data)
+            Object.keys(data).forEach(function (date) {
+                let messageByDate = data[date];
+                $('.messages').append(`<h3>${date}</h3>`)
+                Object.keys(messageByDate).forEach((uid) => {
+                    //                    console.log(messageByDate[uid])
+                    let message = messageByDate[uid];
+                    //   console.log(message.name)
+
+                    $('.messages').append(`<span>Name : </span>${message.name} <br> `)
+                    $('.messages').append(`<span>Email : </span>${message.email} <br> `)
+                    $('.messages').append(`<span>Mobile No : </span>${message.phone} <br> `)
+                    $('.messages').append(`<span>Message : </span>${message.message} <br> `)
+                    $('.messages').append(` <br> `)
+                })
+
+            })
+        })
+    </script>
+
+</body>
+
+</html>
