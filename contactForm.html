@@ -35,9 +35,9 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
+      /* align-items: center; */
       min-height: 100vh;
-      background: #1c87c9;
+      /* background: #333333; */
     }
 
     form {
@@ -95,7 +95,6 @@
 
       }
 
-      .left-part,
       form {
         width: 50%;
       }
@@ -157,6 +156,7 @@
     </nav>
 
   </header>
+
   <div id="nav"></div>
   <div class="main-block">
     <div class="left-part">
@@ -170,7 +170,7 @@
         <input class="fname" type="text" name="name" placeholder="Full name">
         <input class="email" type="text" name="email" placeholder="Email">
         <input class="phone-num" type="text" name="phone" placeholder="Phone number">
-        <!-- <input type="textarea" placeholder="Tell us your requirement"> -->
+
       </div>
       <p>Message</p>
       <div>
@@ -178,56 +178,56 @@
       </div>
       <button onclick="fun()">Submit</button>
     </form>
-
-    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
-    <!--<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>-->
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>
-      var firebaseConfig = {
-        apiKey: "AIzaSyAz6fVM_1P0RJDjKK29X54MP6ohAL0gDW4",
-        authDomain: "to-do-df264.firebaseapp.com",
-        databaseURL: "https://to-do-df264.firebaseio.com",
-        projectId: "to-do-df264",
-        storageBucket: "to-do-df264.appspot.com",
-        messagingSenderId: "870689656698",
-        appId: "1:870689656698:web:d502f43b50507537"
-      };
-      firebase.initializeApp(firebaseConfig);
-      var ref = firebase.database().ref('hairwigindia/contactform/');
-
-
-
-      let data = {};
-      //data[randomString]={"name":"sameer"};
-
-      function fun() {
-
-        console.log("into fun")
-        let today = new Date();
-        console.log(today.getDate() + "" + today.getMonth() + " " + today.getFullYear())
-        date = today.getDate() + "_" + today.getMonth() + "_" + today.getFullYear();
-        console.log(today)
-        var ref = firebase.database().ref('hairwigindia/contactform/' + date + '/');
-
-
-        let randomString = (new Date()).getTime() + "";
-        console.log(randomString)
-        let details = {};
-        details.name = $(".fname").val();
-        details.email = $(".email").val();
-        details.phone = $(".phone-num").val();
-
-        details.message = $(".requirement-msg").val();
-        details.time = today.getHours() + ":" + today.getMinutes();
-        data[randomString] = details;
-        console.log(data)
-        ref.update(data);
-        console.log($(".fname").val())
-      }
-    </script>
   </div>
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+  <!--<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>-->
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAz6fVM_1P0RJDjKK29X54MP6ohAL0gDW4",
+      authDomain: "to-do-df264.firebaseapp.com",
+      databaseURL: "https://to-do-df264.firebaseio.com",
+      projectId: "to-do-df264",
+      storageBucket: "to-do-df264.appspot.com",
+      messagingSenderId: "870689656698",
+      appId: "1:870689656698:web:d502f43b50507537"
+    };
+    firebase.initializeApp(firebaseConfig);
+    var ref = firebase.database().ref('hairwigindia/contactform/');
+
+
+
+    let data = {};
+    //data[randomString]={"name":"sameer"};
+
+    function fun() {
+
+      console.log("into fun")
+      let today = new Date();
+      console.log(today.getDate() + "" + today.getMonth() + " " + today.getFullYear())
+      date = today.getDate() + "_" + today.getMonth() + "_" + today.getFullYear();
+      console.log(today)
+      var ref = firebase.database().ref('hairwigindia/contactform/' + date + '/');
+
+
+      let randomString = (new Date()).getTime() + "";
+      console.log(randomString)
+      let details = {};
+      details.name = $(".fname").val();
+      details.email = $(".email").val();
+      details.phone = $(".phone-num").val();
+
+      details.message = $(".requirement-msg").val();
+      details.time = today.getHours() + ":" + today.getMinutes();
+      data[randomString] = details;
+      console.log(data)
+      ref.update(data);
+      console.log($(".fname").val())
+    }
+  </script>
+
 </body>
 
 </html>
