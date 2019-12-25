@@ -182,7 +182,7 @@
         <li><a href="./products.html">Our products</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="./contactForm.html">Contact Us</a></li>
-        <li><a href="#">Feedback</a></li>
+        <li><a href="./feedback.html">Feedback</a></li>
 
       </ul>
     </nav>
@@ -197,16 +197,17 @@
       <i class="fas fa-mail-bulk"></i>
     </div> -->
     <form>
-      <h1>Contact Us</h1>
+      <h1>Feedback Form</h1>
+      <h5>We would love to hear your thoughts, concerns or your problems with anything so we can improve</h5>
       <div class="info">
         <input class="fname" type="text" name="name" placeholder="Full name">
         <input class="email" type="text" name="email" placeholder="Email">
         <input class="phone-num" type="text" name="phone" placeholder="Phone number">
 
       </div>
-      <p>Message</p>
+      <p>Describe Feedback</p>
       <div>
-        <textarea required rows="4" placeholder="Tell us your requirement" class="requirement-msg"></textarea>
+        <textarea required rows="4" placeholder="" class="requirement-msg"></textarea>
       </div>
       <button id="submit-button" onclick="fun()">Submit</button>
     </form>
@@ -266,7 +267,7 @@
       console.log(today.getDate() + "" + today.getMonth() + " " + today.getFullYear())
       date = today.getDate() + "_" + today.getMonth() + "_" + today.getFullYear();
       console.log(today)
-      var ref = firebase.database().ref('hairwigindia/contactform/' + date + '/');
+      var ref = firebase.database().ref('hairwigindia/feedbackform/' + date + '/');
 
 
       let randomString = (new Date()).getTime() + "";

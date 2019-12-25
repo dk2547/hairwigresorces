@@ -5,6 +5,7 @@
     <title>Hair Wig India</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
@@ -25,8 +26,14 @@
             padding-bottom: 20px;
         }
 
-        .container>center>h3 {
+        .container>center>a>h3 {
             color: #8e4249;
+
+        }
+
+        .container>center>a {
+
+            text-decoration: none;
         }
     </style>
 </head>
@@ -40,16 +47,31 @@
         </center>
 
         <nav class="navbar navbar-inverse">
+
             <ul class="nav navbar-nav">
+
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="./profile.html">Profile</a></li>
                 <li><a href="./products.html">Our products</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="./contactForm.html">Contact Us</a></li>
-                <li><a href="#">Feedback</a></li>
+                <li><a href="./feedback.html">Feedback</a></li>
 
             </ul>
         </nav>
+
+        <!-- code to test -->
+        <!-- <div class="topnav" id="myTopnav">
+
+            <a href="#home" class="active">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div> -->
+
 
     </header>
     <div class="mid-section">
@@ -91,7 +113,9 @@
 
             <div class="container">
                 <center>
-                    <h3>Our Products</h3>
+                    <a href="products.html">
+                        <h3>Our Products</h3>
+                    </a>
                 </center>
                 <br>
                 <div id="img-flex">
@@ -185,6 +209,17 @@
             x[myIndex - 1].style.display = "block";
             setTimeout(carousel, 2500);
         }
+
+
+        //Code to test
+        // function myFunction() {
+        //     var x = document.getElementById("myTopnav");
+        //     if (x.className === "topnav") {
+        //         x.className += " responsive";
+        //     } else {
+        //         x.className = "topnav";
+        //     }
+        // }
     </script>
 
 </body>

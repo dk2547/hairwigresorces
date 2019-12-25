@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>admin</title>
+    <style>
+        .display-date {
+            /* background-color: yellowgreen; */
+            max-width: 15%;
+        }
+
+        .contact-form-message {
+            padding-left: 5%;
+        }
+
+        body {
+            background-color: #dbf9e5;
+        }
+
+        h3 {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contact-form-message">
+
+    </section>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <!--<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>
+        let firebaseConfig = {
+            apiKey: "AIzaSyAz6fVM_1P0RJDjKK29X54MP6ohAL0gDW4",
+            authDomain: "to-do-df264.firebaseapp.com",
+            databaseURL: "https://to-do-df264.firebaseio.com",
+            projectId: "to-do-df264",
+            storageBucket: "to-do-df264.appspot.com",
+            messagingSenderId: "870689656698",
+            appId: "1:870689656698:web:d502f43b50507537"
+        };
+        firebase.initializeApp(firebaseConfig);
+        var ref = firebase.database().ref('hairwigindia/feedbackform/');
+        ref.on('value', function (data) {
+            $(".contact-form-message").html(``)
+            let messages = data.val();
+            Object.keys(messages).forEach(function (key) {
+                //  console.log(key)
+                $(".contact-form-message").append(`<h3 class="display-date">Date ${key}</h3><br>`)
+                Object.keys(messages[key]).forEach((uniqueKey) => {
+                    //console.log(messages[key][uniqueKey]);
+                    let message = messages[key][uniqueKey]
+                    console.log(uniqueKey + '       ' + message.name)
+                    $(".contact-form-message").append(`<span>Name: </span>${message.name}<br>`)
+                    $(".contact-form-message").append(
+                        `<span>email: </span>${message.email}<br>`)
+                    $(".contact-form-message").append(
+                        `<span>phone no: </span>${message.phone}<br>`)
+                    $(".contact-form-message").append(
+                        `<span>Feedback Message: </span>${message.message}<br>`)
+                    $(".contact-form-message").append(
+                        `<span>Time of receiving message: </span>${message.time}<br>`)
+                    $(".contact-form-message").append(`<br>`)
+                })
+                $(".contact-form-message").append(`<br>`)
+            })
+        })
+    </script>
+
+</body>
+
+</html>
