@@ -263,8 +263,13 @@
 
       console.log("into fun")
       let today = new Date();
+      /*
+      For testing in different dates
+      let today = new Date(2018, 9, 10, 10, 33, 30, 0);
+      */
       console.log(today.getDate() + "" + today.getMonth() + " " + today.getFullYear())
-      date = today.getDate() + "_" + today.getMonth() + "_" + today.getFullYear();
+      // date = today.getDate() + "_" + (today.getMonth() + 1) + "_" + today.getFullYear();
+      let date = appendZero(today);
       console.log(today)
       var ref = firebase.database().ref('hairwigindia/contactform/' + date + '/');
 
@@ -280,8 +285,23 @@
       details.time = today.getHours() + ":" + today.getMinutes();
       data[randomString] = details;
       console.log(data)
+      console.log(today.getMonth())
       ref.update(data);
       console.log($(".fname").val())
+    }
+
+    function appendZero(today) {
+      let d = today.getDate();
+      let m = today.getMonth() + 1;
+      if (d < 10) {
+        d = '0' + d;
+      }
+      if (m < 10) {
+        m = '0' + m;
+      }
+      date = today.getFullYear() + "_" + m + "_" + d;
+
+      return date;
     }
   </script>
 
