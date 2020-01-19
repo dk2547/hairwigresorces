@@ -35,18 +35,70 @@
 
             text-decoration: none;
         }
+
+        .logo {
+            text-align: center;
+        }
+
+        .options-logo {
+            display: none
+        }
+
+        .close-options-logo {
+            display: none;
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                text-align: left;
+                background-color: white;
+                display: flex;
+            }
+
+            #logo-img {
+                width: 50%;
+            }
+
+            .options-logo {
+                display: block;
+                width: 50%;
+                text-align: end;
+                padding-top: 15px;
+            }
+
+            .options-logo>img {
+                width: 100%;
+            }
+
+            #hairwigindia-nav {
+                display: none;
+            }
+
+            .close-options-logo>img {
+                width: 60%;
+                padding-top: 15px;
+            }
+
+            .close-options-logo {
+                padding-right: 7px;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <center>
-            <div class="logo">
-                <img id="logo-img" src="./pics/hairwigindia-logo.png" alt="">
-            </div>
-        </center>
+        <!-- <center> -->
+        <div class="logo">
+            <div class="logo-img-hairwigindia"><img id="logo-img" src="./pics/hairwigindia-logo.png" alt=""></div>
+            <div class="options-logo" id="options-logo-id"><img onclick="optionsFuction()" src="./pics/menu-icon-31.png"
+                    alt=""></div>
+            <div class="close-options-logo" id="close-options-logo-id"><img onclick="closeOptionsFuction()"
+                    src="./pics/cross.png" alt=""></div>
+        </div>
+        <!-- </center> -->
 
-        <nav class="navbar navbar-inverse">
+        <nav class="navbar navbar-inverse" id="hairwigindia-nav">
 
             <ul class="nav navbar-nav">
 
@@ -93,17 +145,23 @@
                 <h1 class="welcome-heading"><b>WELCOME TO HAIR WIG INDIA</b></h1>
             </center>
             <div class="welcome-text">
-                <p>We (Hair Wig India) are the manufecturer, traders and exporters of hair wigs <br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, in eaque dolore fugiat porro fugit
-                    dicta
-                    incidunt placeat! Doloribus reprehenderit tempora ducimus pariatur tempore laborum nihil. Numquam
-                    mollitia id, sed rem quas soluta explicabo accusantium veniam, commodi voluptatem veritatis saepe
-                    expedita, distinctio recusandae libero rerum unde ratione consequuntur? Fuga iure nostrum voluptatem
-                    adipisci sunt inventore minima blanditiis numquam nobis quaerat, corporis, incidunt, nemo mollitia
-                    modi
-                    voluptas ducimus! Veritatis quo, magnam rem esse sapiente aut laboriosam molestiae excepturi vitae
-                    incidunt dolore, mollitia possimus. Consectetur at exercitationem voluptates repellat ducimus id
-                    accusantium, iure totam voluptas odio nulla? Iure ea perspiciatis quos itaque.</p>
+                <p>We (Hair Wig India) are the traders and exporters of hair wigs products
+                    We have a wide renge of hair wig products for men and womens including
+                    Men's toupee (patch), Hair Extensions, Ladies Topper and walker product.
+                    
+                    <br>
+                    We are (Hair wig India) , we deal many types of men’s or women’s wig , Hair Extensions , Ladies
+                    Topper and walker product .
+                    Like Hair Product.
+                    Mirage, Australian, Octagon, Full lace/Swiss Lace, Q6 Front lace,
+                    Mono Filament, Silk Base, Poly Base, USA Base, Ladies wig regular, Ladies Full lace wig, Ladies
+                    Front lace wig,
+                    Adhesive, Tape Product
+                    Ultra hold glue, Lace hold glue,
+                    C-22 solvent Remover, Scalp Protector, No-shine ,Super Tape, Ghost Bond, ETC..
+                    Here is stock very comfortable price..
+
+                </p>
             </div>
 
         </section>
@@ -220,6 +278,19 @@
         //         x.className = "topnav";
         //     }
         // }
+        optionsFuction = () => {
+            console.log('hide')
+            document.getElementById("hairwigindia-nav").style.display = "flex";
+            document.getElementById("options-logo-id").style.display = "none";
+            document.getElementById("close-options-logo-id").style.display = "block";
+            document.getElementById("close-options-logo-id").style.width = "50%";
+            document.getElementById("close-options-logo-id").style.textAlign = "end";
+        }
+        closeOptionsFuction = () => {
+            document.getElementById("hairwigindia-nav").style.display = "none";
+            document.getElementById("options-logo-id").style.display = "block";
+            document.getElementById("close-options-logo-id").style.display = "none";
+        }
     </script>
 
 </body>

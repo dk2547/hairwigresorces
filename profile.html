@@ -58,6 +58,19 @@
             width: 25%;
         }
 
+        /* added now */
+        .logo {
+            text-align: center;
+        }
+
+        .options-logo {
+            display: none
+        }
+
+        .close-options-logo {
+            display: none;
+        }
+
         @media screen and (max-width: 480px) {
 
             .product-title {
@@ -68,19 +81,59 @@
                 /* padding: 7% 0 17% 0; */
             }
 
+            /* added now */
+            .logo {
+                text-align: left;
+                background-color: white;
+                display: flex;
+            }
+
+            #logo-img {
+                width: 50%;
+            }
+
+            .options-logo {
+                display: block;
+                width: 50%;
+                text-align: end;
+                padding-top: 15px;
+            }
+
+            .options-logo>img {
+                width: 100%;
+            }
+
+            #hairwigindia-nav {
+                display: none;
+            }
+
+            .close-options-logo>img {
+                width: 60%;
+                padding-top: 15px;
+            }
+
+            .close-options-logo {
+                padding-right: 7px;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <center>
-            <div class="logo">
-                <img id="logo-img" src="./pics/hairwigindia-logo.png" alt="">
-            </div>
-        </center>
+        <!-- <center> -->
+        <div class="logo">
+            <div class="logo-img-hairwigindia"><img id="logo-img" src="./pics/hairwigindia-logo.png" alt=""></div>
+            <div class="options-logo" id="options-logo-id"><img onclick="optionsFuction()" src="./pics/menu-icon-31.png"
+                    alt=""></div>
+            <div class="close-options-logo" id="close-options-logo-id"><img onclick="closeOptionsFuction()"
+                    src="./pics/cross.png" alt=""></div>
+        </div>
 
-        <nav class="navbar navbar-inverse">
+        <!-- </center>  -->
+
+        <nav class="navbar navbar-inverse" id="hairwigindia-nav">
+
             <ul class="nav navbar-nav">
 
                 <li><a href="./index.html">Home</a></li>
@@ -89,6 +142,7 @@
                 <li><a href="./gallery.html">Gallery</a></li>
                 <li><a href="./contactForm.html">Contact Us</a></li>
                 <li><a href="./feedback.html">Feedback</a></li>
+
             </ul>
         </nav>
 
@@ -161,6 +215,21 @@
             </div>
         </center>
     </footer>
+    <script>
+        optionsFuction = () => {
+            console.log('hide')
+            document.getElementById("hairwigindia-nav").style.display = "flex";
+            document.getElementById("options-logo-id").style.display = "none";
+            document.getElementById("close-options-logo-id").style.display = "block";
+            document.getElementById("close-options-logo-id").style.width = "50%";
+            document.getElementById("close-options-logo-id").style.textAlign = "end";
+        }
+        closeOptionsFuction = () => {
+            document.getElementById("hairwigindia-nav").style.display = "none";
+            document.getElementById("options-logo-id").style.display = "block";
+            document.getElementById("close-options-logo-id").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
